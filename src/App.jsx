@@ -60,27 +60,33 @@ function App() {
           icon: "✈️",
           title: "Flight to Kerala",
           date: "13 January 2026",
-          description: "Fly from Amritsar (ATQ) to Cochin International Airport (COK), Kerala. Starting point for the trip."
+          description: "Fly from Amritsar (ATQ) to Cochin International Airport (COK), Kerala. Spend one night in Cochin to rest before the road to the mountains."
         },
         {
           icon: "🏞️",
           title: "Munnar – Tea Mountains",
-          date: "13-15 January 2026",
+          date: "14–16 January 2026",
           description: "2 days in Munnar: Visit Kolukkumalai Tea Estate (the highest tea plantation in the world), explore lush landscapes, and discover the KDHP Tea Museum.",
           image: "/munnar.jpg"
         },
         {
           icon: "🚤",
           title: "Alappuzha (Alleppey) – Backwaters",
-          date: "15-17 January 2026",
-          description: "2 days in Alleppey: Cruise on a traditional houseboat, watch village life by the water, and enjoy Kerala-style meals aboard.",
+          date: "16–18 January 2026",
+          description: "2 days in Alleppey: Cruise on a traditional houseboat, observe village life along the canals, and enjoy Kerala-style meals aboard.",
           image: "/allepey.jpg"
+        },
+        {
+          icon: "🌴",
+          title: "Cochin – Relax Before Departure",
+          date: "18 January 2026",
+          description: "Return to Cochin for a final day of rest, shopping or visiting the old town before departure."
         },
         {
           icon: "🛬",
           title: "Return from Kerala",
           date: "19 January 2026",
-          description: "Trip ends in Cochin. Take your flight home."
+          description: "End of the post-wedding trip. Take your return flight from Cochin International Airport (COK)."
         }
       ],
       keralaTripSummary: "Léa and Love will take care of all logistics (transport, accommodation, activities). Each guest covers their own travel expenses, but we’ll make everything easy and affordable!"
@@ -90,76 +96,88 @@ function App() {
       keralaTripTimeline: [
         {
           icon: "💍",
-          title: "Mariage au Pendjab",
+          title: "Pendjab (Nord-Ouest de l'Inde)",
           date: "11 janvier 2026",
-          description: "Célébrez le mariage au Pendjab."
+          description: "Mariage de Léa et Love"
         },
         {
           icon: "✈️",
-          title: "Vol vers le Kerala",
+          title: "Départ pour le Kerala",
           date: "13 janvier 2026",
-          description: "Envolez-vous d'Amritsar (ATQ) vers l'aéroport international de Cochin (COK), Kerala. Point de départ du voyage."
+          description: "Vol depuis Amritsar (ATQ) vers l'aéroport international de Cochin (COK), Kerala. Nuit à Cochin pour se reposer avant la route vers les montagnes."
         },
         {
           icon: "🏞️",
           title: "Munnar – Montagnes du thé",
-          date: "13-15 janvier 2026",
-          description: "2 jours à Munnar : Visitez Kolukkumalai Tea Estate (la plus haute plantation de thé au monde), explorez les paysages verdoyants et découvrez le musée du thé KDHP.",
+          date: "14–16 janvier 2026",
+          description: "2 jours à Munnar : Repos, visite de Kolukkumalai Tea Estate (la plus haute plantation de thé au monde), balades, exploration des paysages verdoyants et visite du musée du thé KDHP.",
           image: "/munnar.jpg"
         },
         {
           icon: "🚤",
           title: "Alappuzha (Alleppey) – Backwaters",
-          date: "15-17 janvier 2026",
-          description: "2 jours à Alleppey : Croisière sur une houseboat traditionnelle, observez la vie locale au fil de l'eau et dégustez des plats du Kerala à bord.",
+          date: "16–18 janvier 2026",
+          description: "2 jours à Alleppey : Croisière dans les canaux backwaters à bord d'une houseboat traditionnelle (maison-bateau), moments conviviaux, observation de la vie locale au fil de l'eau, et découverte des spécialités culinaires du Kerala préparées par le chef à bord.",
           image: "/allepey.jpg"
         },
         {
+          icon: "🌴",
+          title: "Cochin – Détente avant le départ",
+          date: "18 janvier 2026",
+          description: "Retour à Cochin pour une dernière journée de repos, shopping ou visite de la vieille ville avant le départ."
+        },
+        {
           icon: "🛬",
-          title: "Retour du Kerala",
+          title: "Retour",
           date: "19 janvier 2026",
-          description: "Le voyage se termine à Cochin. Prenez votre vol retour."
+          description: "Fin du voyage post-mariage. Vol retour depuis l'aéroport international de Cochin (COK)."
         }
       ],
-      keralaTripSummary: "Léa et Love s'occupent de toute la logistique (transport, hébergement, activités). Chaque invité prend en charge ses frais de voyage, mais nous veillerons à ce que tout soit facile et abordable !"
+      keralaTripSummary: "Léa et Love s'occupent de la logistique (transport, hébergement, activités) - c'est pour cela que votre confirmation doit être faite d'ici fin juin 2025 :). Chaque invité prend en charge ses frais de voyage, mais nous veillerons à ce que tout soit facile et abordable !"
     },
     es: {
       keralaTripTitle: "Viaje a Kerala",
       keralaTripTimeline: [
         {
           icon: "💍",
-          title: "Boda en Punjab",
+          title: "Punjab, Noroeste de India",
           date: "11 enero 2026",
-          description: "Celebra la boda en Punjab."
+          description: "¡Celebramos la boda!"
         },
         {
           icon: "✈️",
           title: "Vuelo a Kerala",
           date: "13 enero 2026",
-          description: "Vuelo desde Amritsar (ATQ) al Aeropuerto Internacional de Cochin (COK), Kerala. Punto de partida del viaje."
+          description: "Vuelo desde Amritsar (ATQ) al Aeropuerto Internacional de Cochin (COK), Kerala. Pasamos una noche en Cochin para descansar antes de ir a las montañas."
         },
         {
           icon: "🏞️",
           title: "Munnar – Montañas del té",
-          date: "13-15 enero 2026",
-          description: "2 días en Munnar: Visita Kolukkumalai Tea Estate (la plantación de té más alta del mundo), explora paisajes y flora local, y descubre el Museo del Té KDHP.",
+          date: "14–16 enero 2026",
+          description: "2 días en Munnar: Visita Kolukkumalai Tea Estate (la plantación de té más alta del mundo), explora paisajes y flora local, y visita el Museo del Té KDHP.",
           image: "/munnar.jpg"
         },
         {
           icon: "🚤",
           title: "Alappuzha (Alleppey) – Remansos",
-          date: "15-17 enero 2026",
-          description: "2 días en Alleppey: Crucero en casa flotante tradicional, observa la vida local junto al agua y disfruta de comidas típicas de Kerala a bordo.",
+          date: "16–18 enero 2026",
+          description: "2 días en Alleppey: Crucero en casa flotante tradicional, observando la vida local junto a los canales y disfrutando de comidas típicas de Kerala a bordo.",
           image: "/allepey.jpg"
+        },
+        {
+          icon: "🌴",
+          title: "Cochin – Relax antes de la salida",
+          date: "18 enero 2026",
+          description: "Regreso a Cochin para un último día de descanso, compras o visita al casco antiguo antes de la salida."
         },
         {
           icon: "🛬",
           title: "Regreso desde Kerala",
           date: "19 enero 2026",
-          description: "El viaje termina en Cochin. Toma tu vuelo de regreso."
+          description: "Fin del viaje post-boda. Vuelo de regreso desde el Aeropuerto Internacional de Cochin (COK)."
         }
       ],
-      keralaTripSummary: "Léa y Love se encargarán de toda la logística (transporte, alojamiento, actividades). Cada invitado cubre sus gastos de viaje, ¡pero haremos que todo sea fácil y asequible!"
+      keralaTripSummary: "Nos encargaremos de la logística (transporte, alojamiento, actividades). Cada invitado cubre sus gastos de viaje, ¡pero haremos que todo sea fácil y asequible!"
     }
   };
 
@@ -263,12 +281,8 @@ function App() {
                     <span className="font-semibold">50€</span>
                   </li>
                   <li className="flex items-center justify-between py-2">
-                    <span className="flex items-center gap-2 text-left"><span role="img" aria-label="Hotel">🏨</span>{keralaLang === 'fr' ? 'Hébergement à Munnar (2 nuits)' : keralaLang === 'es' ? 'Alojamiento en Munnar (2 noches)' : 'Accommodation in Munnar (2 nights)'}</span>
-                    <span className="font-semibold">50€</span>
-                  </li>
-                  <li className="flex items-center justify-between py-2">
-                    <span className="flex items-center gap-2 text-left"><span role="img" aria-label="Houseboat">🚤</span>{keralaLang === 'fr' ? 'Hébergement à Alappuzha (2 nuits houseboat)' : keralaLang === 'es' ? 'Alojamiento en Alappuzha (2 noches houseboat)' : 'Accommodation in Alappuzha (2 nights houseboat)'}</span>
-                    <span className="font-semibold">100€</span>
+                    <span className="flex items-center gap-2 text-left"><span role="img" aria-label="Hotel">🏨</span>{keralaLang === 'fr' ? 'Hébergements (toutes les étapes)' : keralaLang === 'es' ? 'Alojamiento (todas las etapas)' : 'Accommodation (all places)'}</span>
+                    <span className="font-semibold">200€</span>
                   </li>
                   <li className="flex items-center justify-between py-2">
                     <span className="flex items-center gap-2 text-left"><span role="img" aria-label="Meal">🍛</span>{keralaLang === 'fr' ? 'Repas (7 jours)' : keralaLang === 'es' ? 'Comidas (7 días)' : 'Meals (7 days)'}</span>
@@ -277,7 +291,7 @@ function App() {
                 </ul>
                 <div className="text-xl font-extrabold text-teal-900 bg-teal-100 rounded-lg py-2 px-4 mb-2 flex items-center justify-center gap-2">
                   <span role="img" aria-label="Total">🧮</span>
-                  {keralaLang === 'fr' ? 'Total estimé' : keralaLang === 'es' ? 'Total estimado' : 'Estimated Total'}: <span className="ml-2">450€</span>
+                  {keralaLang === 'fr' ? 'Total estimé' : keralaLang === 'es' ? 'Total estimado' : 'Estimated Total'}: <span className="ml-2">500€</span>
                 </div>
                 <div className="text-xs text-teal-500 mt-1">
                   {keralaLang === 'fr' ? 'Prix maximum par poste, à titre indicatif.' : keralaLang === 'es' ? 'Precio máximo por partida, orientativo.' : 'Maximum price per item, for reference.'}
