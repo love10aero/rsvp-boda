@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply font-sans;
+  }
+
+  html {
+    font-family: 'Quicksand', sans-serif;
+  }
+}
+
 @layer utilities {
   .bg-wedding-pattern {
     background-color: #a7f3d0;
