@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/rsvp-boda/' // nombre de tu repo
+  base: '/' // nombre de tu repo
 });
