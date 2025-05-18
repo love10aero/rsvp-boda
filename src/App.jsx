@@ -185,11 +185,11 @@ export default function App() {
       <div className="flex items-center justify-center w-full min-h-screen p-4">
         <form onSubmit={handleSubmit} className="bg-white bg-opacity-95 rounded-2xl shadow-xl w-full max-w-5xl border border-gray-300 flex flex-col md:flex-row overflow-hidden">
           {/* Image Side: Appears on top on mobile (due to flex-col and DOM order), left on desktop (md:flex-row) */}
-          <div className="w-full md:w-1/2 flex justify-center items-center p-6 md:p-8 md:border-r border-gray-200">
+          <div className="w-full md:w-1/2 flex justify-center items-center p-4 sm:p-6 md:p-8 md:border-r border-gray-200">
             <img 
               src={`${import.meta.env.BASE_URL}Moment romantique minimaliste en noir et blanc-Photoroom.png`} 
               alt={t('altPareja')} 
-              className="w-full max-w-[280px] sm:max-w-xs md:max-w-full rounded-2xl shadow-lg object-cover" 
+              className="w-full max-w-[240px] sm:max-w-xs md:max-w-full rounded-2xl shadow-lg object-cover max-h-[200px] sm:max-h-[250px] md:max-h-none" 
               style={{
                 filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1))'
               }}
@@ -229,20 +229,20 @@ export default function App() {
             {currentStep === 1 && (
               <>
                 <div className="mb-4">
-                  <h2 className="text-xl font-medium text-emerald-800 mb-3">{t('attendingQuestion')}</h2>
+                  <h2 className="text-xl sm:text-lg font-medium text-emerald-800 mb-3">{t('attendingQuestion')}</h2>
                   <div className="flex flex-col gap-3">
                     <label className="block cursor-pointer">
                       <div className={`flex items-center border rounded-lg p-3 ${form.attending === 'yes' ? 'border-emerald-500 bg-emerald-50' : 'border-emerald-100 hover:bg-emerald-50'}`}>
                         <span className="flex items-center justify-center w-6 h-6 mr-3 rounded-md bg-emerald-100 text-emerald-800 font-medium border border-emerald-300">A</span>
                         <input type="radio" name="attending" value="yes" checked={form.attending === 'yes'} onChange={handleChange} className="sr-only" required />
-                        <span className="text-emerald-800">{t('yes')}</span>
+                        <span className="text-emerald-800 text-base sm:text-sm">{t('yes')}</span>
                       </div>
                     </label>
                     <label className="block cursor-pointer">
                       <div className={`flex items-center border rounded-lg p-3 ${form.attending === 'no' ? 'border-emerald-500 bg-emerald-50' : 'border-emerald-100 hover:bg-emerald-50'}`}>
                         <span className="flex items-center justify-center w-6 h-6 mr-3 rounded-md bg-emerald-100 text-emerald-800 font-medium border border-emerald-300">B</span>
                         <input type="radio" name="attending" value="no" checked={form.attending === 'no'} onChange={handleChange} className="sr-only" />
-                        <span className="text-emerald-800">{t('no')}</span>
+                        <span className="text-emerald-800 text-base sm:text-sm">{t('no')}</span>
                       </div>
                     </label>
                   </div>
@@ -264,20 +264,20 @@ export default function App() {
             {currentStep === 2 && (
               <>
                 <div className="mb-4">
-                  <h2 className="text-xl font-medium text-emerald-800 mb-3">{t('plusOneQuestion')}</h2>
+                  <h2 className="text-xl sm:text-lg font-medium text-emerald-800 mb-3">{t('plusOneQuestion')}</h2>
                   <div className="flex flex-col gap-3">
                     <label className="block cursor-pointer">
                       <div className={`flex items-center border rounded-lg p-3 ${form.plusOne === 'yes' ? 'border-emerald-500 bg-emerald-50' : 'border-emerald-100 hover:bg-emerald-50'}`}>
                         <span className="flex items-center justify-center w-6 h-6 mr-3 rounded-md bg-emerald-100 text-emerald-800 font-medium border border-emerald-300">A</span>
                         <input type="radio" name="plusOne" value="yes" checked={form.plusOne === 'yes'} onChange={handleChange} className="sr-only" required />
-                        <span className="text-emerald-800">{t('yes')}</span>
+                        <span className="text-emerald-800 text-base sm:text-sm">{t('yes')}</span>
                       </div>
                     </label>
                     <label className="block cursor-pointer">
                       <div className={`flex items-center border rounded-lg p-3 ${form.plusOne === 'no' ? 'border-emerald-500 bg-emerald-50' : 'border-emerald-100 hover:bg-emerald-50'}`}>
                         <span className="flex items-center justify-center w-6 h-6 mr-3 rounded-md bg-emerald-100 text-emerald-800 font-medium border border-emerald-300">B</span>
                         <input type="radio" name="plusOne" value="no" checked={form.plusOne === 'no'} onChange={handleChange} className="sr-only" />
-                        <span className="text-emerald-800">{t('no')}</span>
+                        <span className="text-emerald-800 text-base sm:text-sm">{t('no')}</span>
                       </div>
                     </label>
                   </div>
@@ -302,12 +302,12 @@ export default function App() {
             {currentStep === 3 && (
               <>
                 <div className="mb-4">
-                  <h2 className="text-xl font-medium text-emerald-800 mb-3">{t('guestNamesTitle')}</h2>
+                  <h2 className="text-xl sm:text-lg font-medium text-emerald-800 mb-3">{t('guestNamesTitle')}</h2>
                   <textarea
                     name="guestNames"
                     value={form.guestNames}
                     onChange={handleChange}
-                    className="w-full p-3 border border-emerald-200 rounded-lg focus:ring focus:ring-emerald-200 focus:border-emerald-400 outline-none transition"
+                    className="w-full p-3 border border-emerald-200 rounded-lg focus:ring focus:ring-emerald-200 focus:border-emerald-400 outline-none transition text-base sm:text-sm"
                     placeholder={t('guestNamesPlaceholder')}
                     rows={3}
                   />
@@ -332,28 +332,28 @@ export default function App() {
             {currentStep === 4 && (
               <>
                 <div className="mb-4">
-                  <h2 className="text-xl font-medium text-emerald-800 mb-3">{t('keralaQuestion')}</h2>
-                  <p className="text-emerald-600 text-sm mb-3">{t('keralaDetails')}</p>
+                  <h2 className="text-xl sm:text-lg font-medium text-emerald-800 mb-3">{t('keralaQuestion')}</h2>
+                  <p className="text-emerald-600 text-sm sm:text-xs mb-3">{t('keralaDetails')}</p>
                   <div className="flex flex-col gap-3">
                     <label className="block cursor-pointer">
                       <div className={`flex items-center border rounded-lg p-3 ${form.kerala === 'yes' ? 'border-emerald-500 bg-emerald-50' : 'border-emerald-100 hover:bg-emerald-50'}`}>
                         <span className="flex items-center justify-center w-6 h-6 mr-3 rounded-md bg-emerald-100 text-emerald-800 font-medium border border-emerald-300">A</span>
                         <input type="radio" name="kerala" value="yes" checked={form.kerala === 'yes'} onChange={handleChange} className="sr-only" required />
-                        <span className="text-emerald-800">{t('yes')}</span>
+                        <span className="text-emerald-800 text-base sm:text-sm">{t('yes')}</span>
                       </div>
                     </label>
                     <label className="block cursor-pointer">
                       <div className={`flex items-center border rounded-lg p-3 ${form.kerala === 'no' ? 'border-emerald-500 bg-emerald-50' : 'border-emerald-100 hover:bg-emerald-50'}`}>
                         <span className="flex items-center justify-center w-6 h-6 mr-3 rounded-md bg-emerald-100 text-emerald-800 font-medium border border-emerald-300">B</span>
                         <input type="radio" name="kerala" value="no" checked={form.kerala === 'no'} onChange={handleChange} className="sr-only" />
-                        <span className="text-emerald-800">{t('no')}</span>
+                        <span className="text-emerald-800 text-base sm:text-sm">{t('no')}</span>
                       </div>
                     </label>
                     <label className="block cursor-pointer">
                       <div className={`flex items-center border rounded-lg p-3 ${form.kerala === 'maybe' ? 'border-emerald-500 bg-emerald-50' : 'border-emerald-100 hover:bg-emerald-50'}`}>
                         <span className="flex items-center justify-center w-6 h-6 mr-3 rounded-md bg-emerald-100 text-emerald-800 font-medium border border-emerald-300">C</span>
                         <input type="radio" name="kerala" value="maybe" checked={form.kerala === 'maybe'} onChange={handleChange} className="sr-only" />
-                        <span className="text-emerald-800">{t('keralaMaybeOption')}</span>
+                        <span className="text-emerald-800 text-base sm:text-sm">{t('keralaMaybeOption')}</span>
                       </div>
                     </label>
                   </div>
