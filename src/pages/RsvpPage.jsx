@@ -13,8 +13,8 @@ const translations = {
     mainGuestNamePlaceholder: "Escribe tu nombre completo",
     plusOneNameLabel: "Nombre completo del acompañante",
     plusOneNamePlaceholder: "Escribe el nombre de tu acompañante",
-    keralaQuestion: "¿Te apuntas al viaje posterior a Kerala (aproximadamente 1 semana)?",
-    keralaDetails: "(Los detalles se enviarán más adelante)",
+    keralaQuestion: "¿Te apuntas al viaje posterior a Kerala (1 semana)?",
+    keralaDetails: "Detalles",
     nextButton: "Siguiente",
     backButton: "Atrás",
     submitButton: "Enviar RSVP",
@@ -69,8 +69,8 @@ Cada invitado cubrirá sus gastos de viaje, pero nos aseguraremos de que todo se
     mainGuestNamePlaceholder: "Entre ton nom complet",
     plusOneNameLabel: "Nom complet de ton +1",
     plusOneNamePlaceholder: "Entre le nom de ton accompagnant(e)",
-    keralaQuestion: "Es-tu intéressé pour te joindre au voyage prévu dans le Kerala après le mariage (environ 1 semaine) ?",
-    keralaDetails: "(Les informations seront communiquées ultérieurement)",
+    keralaQuestion: "Es-tu intéressé pour te joindre au voyage prévu dans le Kerala après le mariage (1 semaine) ?",
+    keralaDetails: "Détails",
     nextButton: "Suivant",
     backButton: "Retour",
     submitButton: "Envoyer le RSVP",
@@ -143,7 +143,7 @@ Each guest will cover their own travel expenses, but we’ll make sure everythin
   }
 };
 
-export default function RsvpForm() {
+export default function RsvpForm({ onNavClick }) {
   const [form, setForm] = useState({
     attending: '',
     plusOne: '',
@@ -156,6 +156,7 @@ export default function RsvpForm() {
   const [currentStep, setCurrentStep] = useState(1);
   const totalSteps = 4;
   const [language, setLanguage] = useState('es');
+  const [showModal, setShowModal] = useState(false);
 
   const t = (key) => translations[language][key] || key;
 
@@ -584,7 +585,19 @@ export default function RsvpForm() {
           <>
             <div className="mb-4">
               <h2 className="text-xl sm:text-lg font-medium text-teal-800 mb-3">{t('keralaQuestion')}</h2>
-              <p className="text-teal-600 text-sm sm:text-xs mb-3">{t('keralaDetails')}</p>
+              <p className="text-teal-600 text-sm sm:text-xs mb-3 cursor-pointer underline" onClick={() => setShowModal(true)}>{t('keralaDetails')}</p>
+              {showModal && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
+                  <div className="bg-white rounded-xl shadow-lg p-6 max-w-xs w-full text-center">
+                    <h3 className="text-lg font-bold text-teal-800 mb-2">{language === 'fr' ? 'Attention' : language === 'es' ? 'Atención' : 'Warning'}</h3>
+                    <p className="mb-4 text-teal-700 text-sm">{language === 'fr' ? 'Si vous consultez les détails du voyage, votre progression dans le formulaire sera perdue.' : language === 'es' ? 'Si consultas los detalles del viaje, perderás el progreso del formulario.' : 'If you view trip details, your form progress will be lost.'}</p>
+                    <div className="flex justify-center gap-3">
+                      <button className="px-4 py-2 rounded bg-gray-200 text-teal-800 font-medium" onClick={() => setShowModal(false)}>{language === 'fr' ? 'Annuler' : language === 'es' ? 'Cancelar' : 'Cancel'}</button>
+                      <button className="px-4 py-2 rounded bg-teal-600 text-white font-medium" onClick={() => { setShowModal(false); onNavClick && onNavClick('kerala'); }}>{language === 'fr' ? 'Continuer' : language === 'es' ? 'Continuar' : 'Continue'}</button>
+                    </div>
+                  </div>
+                </div>
+              )}
               <div className="flex flex-col gap-3">
                 <label className="block cursor-pointer">
                   <div

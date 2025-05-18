@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import RsvpForm from './pages/RsvpPage'; // Renamed import
+import VenuePage from './pages/VenuePage';
 import Background from './components/Background';
 
 // TopBar Component
@@ -24,7 +25,7 @@ function TopBar({ onNavClick }) {
             className={navButtonBaseStyle}
           >
             <span role="img" aria-label="Venue icon">📍</span>
-            <span>Venue Details <span className="text-xs opacity-70">(Coming Soon)</span></span>
+            <span>Venue Details</span>
           </button>
         </li>
         <li>
@@ -209,14 +210,11 @@ function App() {
           )}
 
           {activeView === 'rsvp' && (
-            <RsvpForm />
+            <RsvpForm onNavClick={handleNavClick} />
           )}
 
           {activeView === 'venue' && (
-            <div className="bg-white bg-opacity-90 p-8 rounded-2xl shadow-xl border border-gray-300 max-w-md w-full">
-              <h2 className="text-2xl font-bold text-teal-800">Venue Details</h2> {/* text-emerald-800 to text-teal-800 */}
-              <p className="mt-4 text-gray-700">Coming soon...</p>
-            </div>
+            <VenuePage />
           )}
 
           {activeView === 'kerala' && (
