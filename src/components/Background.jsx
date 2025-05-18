@@ -20,7 +20,7 @@ export default function Background({ children }) {
     <div className="relative min-h-screen overflow-hidden">      <div 
         className="absolute inset-0"
         style={{
-          backgroundImage: 'url("/4057631.jpg")',
+          backgroundImage: `url('${import.meta.env.BASE_URL}4057631.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           filter: 'brightness(1.05)',
