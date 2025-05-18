@@ -28,6 +28,9 @@ jobs:
         env:
           VITE_AIRTABLE_API_TOKEN: ${{ secrets.VITE_AIRTABLE_API_TOKEN }}
 
+      - name: Copy CNAME to dist 🌐
+        run: cp CNAME dist/
+
       - name: Deploy to GitHub Pages 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
