@@ -13,7 +13,6 @@ const translations = {
     guestNamesPlaceholder: "Escribe los nombres de todas las personas que asistirán",
     keralaQuestion: "¿Te apuntas al viaje posterior a Kerala (aproximadamente 1 semana)?",
     keralaDetails: "(Los detalles se enviarán más adelante)",
-    keralaMaybeOption: "Aún no lo sé",
     nextButton: "Siguiente",
     backButton: "Atrás",
     submitButton: "Enviar RSVP",
@@ -26,35 +25,33 @@ const translations = {
     summaryKeralaTrip: "Viaje a Kerala:",
     summaryKeralaYes: "Sí",
     summaryKeralaNo: "No",
-    summaryKeralaMaybe: "Aún por decidir",
     thankYouRegret: "Lamentamos que no puedas acompañarnos. ¡Gracias por responder!",
     altPareja: "Pareja"
   },
   fr: {
+    
     rsvpTitle: "RSVP – Confirmez votre présence !",
-    rsvpSubtitle: "Nous espérons célébrer avec vous 💍",
-    attendingQuestion: "Serez-vous présent au mariage ?",
+    rsvpSubtitle: "Nous avons hâte de célébrer ce moment avec vous 💍",
+    attendingQuestion: "Serez-vous présent(e) au mariage ?",
     yes: "Oui",
     no: "Non",
-    plusOneQuestion: "Viendrez-vous avec un(e) accompagnant(e) (+1) ?",
-    guestNamesTitle: "Nom(s) des invité(s)",
-    guestNamesPlaceholder: "Écrivez les noms de toutes les personnes qui seront présentes",
-    keralaQuestion: "Participez-vous au voyage post-mariage au Kerala (environ 1 semaine) ?",
-    keralaDetails: "(Les détails seront envoyés plus tard)",
-    keralaMaybeOption: "Je ne sais pas encore",
+    plusOneQuestion: "Viendrez-vous accompagné(e) (+1) ?",
+    guestNamesTitle: "Nom(s) des participant(e)s",
+    guestNamesPlaceholder: "Indiquez les noms de toutes les personnes qui seront présentes",
+    keralaQuestion: "Souhaitez-vous participer au voyage au Kerala après le mariage (environ 1 semaine) ?",
+    keralaDetails: "(Les informations seront communiquées ultérieurement)",
     nextButton: "Suivant",
-    backButton: "Précédent",
-    submitButton: "Envoyer RSVP",
+    backButton: "Retour",
+    submitButton: "Envoyer le RSVP",
     thankYouMessageTitle: "Merci pour votre réponse ! 💌",
-    thankYouSeeYou: "Nous avons hâte de vous voir à la célébration !",
-    thankYouSummaryTitle: "Résumé de votre RSVP :",
+    thankYouSeeYou: "Nous avons hâte de vous retrouver pour cette belle célébration !",
+    thankYouSummaryTitle: "Résumé de votre réponse :",
     summaryAttending: "Présence :",
     summaryPlusOne: "Accompagnant(e) :",
-    summaryGuests: "Invité(s) :",
+    summaryGuests: "Participant(e)s :",
     summaryKeralaTrip: "Voyage au Kerala :",
     summaryKeralaYes: "Oui",
     summaryKeralaNo: "Non",
-    summaryKeralaMaybe: "Pas encore décidé",
     thankYouRegret: "Nous sommes désolés que vous ne puissiez pas vous joindre à nous. Merci d'avoir répondu !",
     altPareja: "Couple"
   }
@@ -106,7 +103,7 @@ export default function App() {
             "RSVP Date": rsvpDate,
             "assist": form.attending === 'yes',
             "plus one": form.plusOne === 'yes',
-            "kerala": form.kerala === 'yes' // Only 'yes' maps to true, 'no' and 'maybe' map to false
+            "kerala": form.kerala === 'yes' // Only 'yes' maps to true, 'no' maps to false
           }
         }
       ]
@@ -164,7 +161,7 @@ export default function App() {
                   <li><strong>{t('summaryKeralaTrip')}</strong> {
                     form.kerala === 'yes' ? t('summaryKeralaYes') : 
                     form.kerala === 'no' ? t('summaryKeralaNo') : 
-                    t('summaryKeralaMaybe')
+                    ''
                   }</li>
                 </ul>
               </div>
@@ -347,13 +344,6 @@ export default function App() {
                         <span className="flex items-center justify-center w-6 h-6 mr-3 rounded-md bg-emerald-100 text-emerald-800 font-medium border border-emerald-300">B</span>
                         <input type="radio" name="kerala" value="no" checked={form.kerala === 'no'} onChange={handleChange} className="sr-only" />
                         <span className="text-emerald-800 text-base sm:text-sm">{t('no')}</span>
-                      </div>
-                    </label>
-                    <label className="block cursor-pointer">
-                      <div className={`flex items-center border rounded-lg p-3 ${form.kerala === 'maybe' ? 'border-emerald-500 bg-emerald-50' : 'border-emerald-100 hover:bg-emerald-50'}`}>
-                        <span className="flex items-center justify-center w-6 h-6 mr-3 rounded-md bg-emerald-100 text-emerald-800 font-medium border border-emerald-300">C</span>
-                        <input type="radio" name="kerala" value="maybe" checked={form.kerala === 'maybe'} onChange={handleChange} className="sr-only" />
-                        <span className="text-emerald-800 text-base sm:text-sm">{t('keralaMaybeOption')}</span>
                       </div>
                     </label>
                   </div>
