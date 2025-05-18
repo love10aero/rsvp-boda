@@ -1,4 +1,27 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .bg-wedding-pattern {
+    background-color: #a7f3d0;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+      linear-gradient(120deg, #d1fae5 0%, #10b981 100%);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+  }
+  
+  .bg-eucalyptus {
+    --leaf-color: rgba(126, 191, 165, 0.2);
+    background-color: #f5f7f6;
+    background-image: 
+      linear-gradient(120deg, rgba(126, 191, 165, 0.1), rgba(255, 255, 255, 0.6)),
+      radial-gradient(circle at 15% 15%, var(--leaf-color), transparent 40%),
+      radial-gradient(circle at 85% 15%, var(--leaf-color), transparent 40%),
+      radial-gradient(circle at 15% 85%, var(--leaf-color), transparent 40%),
+      radial-gradient(circle at 85% 85%, var(--leaf-color), transparent 40%),
+      radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), transparent 50%);
+  }
+}
