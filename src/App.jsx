@@ -33,7 +33,7 @@ function HomePage() {
 // Main App component for routing
 function App() {
   return (
-    <BrowserRouter basename="/rsvp-boda">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/rsvp" element={<RsvpPage />} />
