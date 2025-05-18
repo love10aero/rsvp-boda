@@ -29,7 +29,33 @@ const translations = {
     summaryKeralaYes: "Sí",
     summaryKeralaNo: "No",
     thankYouRegret: "Lamentamos que no puedas acompañarnos. ¡Gracias por responder!",
-    altPareja: "Pareja"
+    altPareja: "Pareja",
+    keralaTripTitle: "VIAJE POST-BODA: Descubre Kerala",
+    keralaTripDescription: `Después de la boda en Punjab, extiende la magia con una semana explorando la exuberante belleza de Kerala: desde montañas cubiertas de niebla hasta los tranquilos remansos.
+
+✈️ Salida – 13 de enero de 2026
+El 13 de enero, acompáñanos rumbo al sur, al estado tropical de Kerala. El punto de partida es el Aeropuerto Internacional de Cochin (COK), a unas 3 horas en coche de Munnar.
+
+🏞️ Munnar – 2 días en las montañas del té
+En las colinas de los Ghats Occidentales, Munnar es famosa por sus paisajes y plantaciones de té. Destacados:
+- Visita a Kolukkumalai Tea Estate, la plantación de té más alta del mundo.
+- Recorridos por paisajes y flora local.
+- Descubre el Museo del Té KDHP y la historia del té en Kerala.
+
+🚤 Alappuzha (Alleppey) – 2 días en los remansos
+Después de Munnar, iremos a Alleppey —la “Venecia del Este”— para un crucero relajante:
+- Navega en una casa flotante tradicional por los remansos.
+- Observa la vida local junto al agua.
+- Prueba comidas caseras al estilo Kerala a bordo.
+Alleppey está a 1,5 horas del aeropuerto de Cochin.
+
+🛬 Regreso – 19 de enero de 2026
+El viaje termina en Cochin, desde donde puedes tomar tu vuelo de regreso.
+
+Este viaje es una oportunidad para compartir más tiempo juntos en un entorno precioso. Léa y Love se encargarán de la logística —transporte, alojamiento y actividades— para que solo tengas que disfrutar.
+
+Cada invitado cubrirá sus gastos de viaje, pero nos aseguraremos de que todo sea fácil de organizar y lo más asequible posible.`,
+    keralaTripLang: "Idioma",
   },
   fr: {
     rsvpTitle: "RSVP – Confirme ta présence !",
@@ -59,7 +85,61 @@ const translations = {
     summaryKeralaYes: "Oui",
     summaryKeralaNo: "Non",
     thankYouRegret: "Nous sommes désolés que vous ne puissiez pas vous joindre à nous. Merci d'avoir répondu !",
-    altPareja: "Couple"
+    altPareja: "Couple",
+    keralaTripTitle: "VOYAGE POST-MARIAGE : Découvrez le Kerala",
+    keralaTripDescription: `Après la fête au Pendjab, prolongez la magie avec une semaine à travers la beauté luxuriante du Kerala — des montagnes brumeuses aux paisibles backwaters.
+
+✈️ Départ – 13 janvier 2026
+Le 13 janvier, rejoignez-nous pour descendre dans l’État tropical du Kerala. Le point de départ est l’aéroport international de Cochin (COK), à environ 3 heures de route de Munnar.
+
+🏞️ Munnar – 2 jours dans les montagnes du thé
+Au cœur des Ghâts occidentaux, Munnar est célèbre pour ses collines et plantations de thé. Points forts :
+- Visite de Kolukkumalai Tea Estate, la plus haute plantation de thé au monde.
+- Balades dans les paysages verdoyants et découverte de la flore locale.
+- Découverte du musée du thé KDHP et de l’histoire du thé au Kerala.
+
+🚤 Alappuzha (Alleppey) – 2 jours sur les backwaters
+Après Munnar, direction Alleppey — la “Venise de l’Est” — pour une croisière relaxante :
+- Navigation sur une houseboat traditionnelle dans les backwaters.
+- Observer la vie locale au fil de l’eau.
+- Déguster des plats maison typiques du Kerala à bord.
+Alleppey est à 1h30 de l’aéroport de Cochin.
+
+🛬 Retour – 19 janvier 2026
+Le voyage se termine à Cochin, d’où vous pourrez prendre votre vol retour.
+
+Ce voyage post-mariage est une belle occasion de partager encore plus de moments ensemble. Léa et Love s’occupent de toute la logistique — transport, hébergement, activités — pour que vous puissiez simplement profiter.
+
+Chaque invité prend en charge ses frais de voyage, mais nous veillerons à ce que tout soit facile à organiser et aussi abordable que possible.`,
+    keralaTripLang: "Langue",
+  },
+  en: {
+    keralaTripTitle: "POST-WEDDING TRIP: Discover Kerala",
+    keralaTripDescription: `After the wedding celebrations in Punjab, extend the magic with a one-week journey through the lush beauty of Kerala — from misty mountains to peaceful backwaters.
+
+✈️ Departure – 13 January 2026
+On 13 January, join us as we head south to the tropical state of Kerala. The starting point is Cochin International Airport (COK), located about 3 hours by car from Munnar.
+
+🏞️ Munnar – 2 Days in the Tea Mountains
+Nestled in the Western Ghats, Munnar is known for its scenic hills and endless tea plantations. Highlights include:
+- Visiting Kolukkumalai Tea Estate, the highest tea plantation in the world.
+- Exploring lush landscapes and local flora.
+- Discovering the KDHP Tea Museum and learning the story of tea in Kerala.
+
+🚤 Alappuzha (Alleppey) – 2 Days on the Backwaters
+After Munnar, we’ll head to Alleppey — the “Venice of the East” — for a relaxing cruise:
+- Sailing on a traditional houseboat through the calm backwaters.
+- Watching village life unfold by the water.
+- Tasting homemade Kerala-style meals aboard.
+Alleppey is about 1.5 hours from Cochin Airport.
+
+🛬 Return – 19 January 2026
+The journey will end in Cochin, from where you can take your flight home.
+
+This post-wedding trip is a wonderful opportunity to spend more time together in a beautiful setting. Léa and Love will happily take care of all the logistics — transport, accommodation, and activities — so that you can simply enjoy the journey.
+
+Each guest will cover their own travel expenses, but we’ll make sure everything is easy to organise and as affordable as possible.`,
+    keralaTripLang: "Language",
   }
 };
 
@@ -250,7 +330,7 @@ export default function RsvpForm() {
         />
       </div>
 
-      <div className="w-full md:w-1/2 p-6 sm:p-8 space-y-6">
+      <div className="w-full md:w-1/2 flex flex-col justify-center p-6 sm:p-8 space-y-6">
         <div className="flex justify-end space-x-3 mb-4">
           <button
             type="button"

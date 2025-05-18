@@ -33,7 +33,7 @@ function TopBar({ onNavClick }) {
             className={navButtonBaseStyle}
           >
             <span role="img" aria-label="Trip icon">✈️</span>
-            <span>Trip to Kerala <span className="text-xs opacity-70">(Coming Soon)</span></span>
+            <span>Trip to Kerala</span>
           </button>
         </li>
       </ul>
@@ -44,6 +44,124 @@ function TopBar({ onNavClick }) {
 // Main App component
 function App() {
   const [activeView, setActiveView] = useState('canva'); // 'canva', 'rsvp', 'venue', 'kerala'
+  const [keralaLang, setKeralaLang] = useState('en'); // Language state for Kerala section
+
+  const translations = {
+    en: {
+      keralaTripTitle: "Trip to Kerala",
+      keralaTripTimeline: [
+        {
+          icon: "💍",
+          title: "Wedding in Punjab",
+          date: "11 January 2026",
+          description: "Celebrate the wedding in Punjab."
+        },
+        {
+          icon: "✈️",
+          title: "Flight to Kerala",
+          date: "13 January 2026",
+          description: "Fly from Amritsar (ATQ) to Cochin International Airport (COK), Kerala. Starting point for the trip."
+        },
+        {
+          icon: "🏞️",
+          title: "Munnar – Tea Mountains",
+          date: "13-15 January 2026",
+          description: "2 days in Munnar: Visit Kolukkumalai Tea Estate (the highest tea plantation in the world), explore lush landscapes, and discover the KDHP Tea Museum.",
+          image: "/munnar.jpg"
+        },
+        {
+          icon: "🚤",
+          title: "Alappuzha (Alleppey) – Backwaters",
+          date: "15-17 January 2026",
+          description: "2 days in Alleppey: Cruise on a traditional houseboat, watch village life by the water, and enjoy Kerala-style meals aboard.",
+          image: "/allepey.jpg"
+        },
+        {
+          icon: "🛬",
+          title: "Return from Kerala",
+          date: "19 January 2026",
+          description: "Trip ends in Cochin. Take your flight home."
+        }
+      ],
+      keralaTripSummary: "Léa and Love will take care of all logistics (transport, accommodation, activities). Each guest covers their own travel expenses, but we’ll make everything easy and affordable!"
+    },
+    fr: {
+      keralaTripTitle: "Voyage au Kerala",
+      keralaTripTimeline: [
+        {
+          icon: "💍",
+          title: "Mariage au Pendjab",
+          date: "11 janvier 2026",
+          description: "Célébrez le mariage au Pendjab."
+        },
+        {
+          icon: "✈️",
+          title: "Vol vers le Kerala",
+          date: "13 janvier 2026",
+          description: "Envolez-vous d'Amritsar (ATQ) vers l'aéroport international de Cochin (COK), Kerala. Point de départ du voyage."
+        },
+        {
+          icon: "🏞️",
+          title: "Munnar – Montagnes du thé",
+          date: "13-15 janvier 2026",
+          description: "2 jours à Munnar : Visitez Kolukkumalai Tea Estate (la plus haute plantation de thé au monde), explorez les paysages verdoyants et découvrez le musée du thé KDHP.",
+          image: "/munnar.jpg"
+        },
+        {
+          icon: "🚤",
+          title: "Alappuzha (Alleppey) – Backwaters",
+          date: "15-17 janvier 2026",
+          description: "2 jours à Alleppey : Croisière sur une houseboat traditionnelle, observez la vie locale au fil de l'eau et dégustez des plats du Kerala à bord.",
+          image: "/allepey.jpg"
+        },
+        {
+          icon: "🛬",
+          title: "Retour du Kerala",
+          date: "19 janvier 2026",
+          description: "Le voyage se termine à Cochin. Prenez votre vol retour."
+        }
+      ],
+      keralaTripSummary: "Léa et Love s'occupent de toute la logistique (transport, hébergement, activités). Chaque invité prend en charge ses frais de voyage, mais nous veillerons à ce que tout soit facile et abordable !"
+    },
+    es: {
+      keralaTripTitle: "Viaje a Kerala",
+      keralaTripTimeline: [
+        {
+          icon: "💍",
+          title: "Boda en Punjab",
+          date: "11 enero 2026",
+          description: "Celebra la boda en Punjab."
+        },
+        {
+          icon: "✈️",
+          title: "Vuelo a Kerala",
+          date: "13 enero 2026",
+          description: "Vuelo desde Amritsar (ATQ) al Aeropuerto Internacional de Cochin (COK), Kerala. Punto de partida del viaje."
+        },
+        {
+          icon: "🏞️",
+          title: "Munnar – Montañas del té",
+          date: "13-15 enero 2026",
+          description: "2 días en Munnar: Visita Kolukkumalai Tea Estate (la plantación de té más alta del mundo), explora paisajes y flora local, y descubre el Museo del Té KDHP.",
+          image: "/munnar.jpg"
+        },
+        {
+          icon: "🚤",
+          title: "Alappuzha (Alleppey) – Remansos",
+          date: "15-17 enero 2026",
+          description: "2 días en Alleppey: Crucero en casa flotante tradicional, observa la vida local junto al agua y disfruta de comidas típicas de Kerala a bordo.",
+          image: "/allepey.jpg"
+        },
+        {
+          icon: "🛬",
+          title: "Regreso desde Kerala",
+          date: "19 enero 2026",
+          description: "El viaje termina en Cochin. Toma tu vuelo de regreso."
+        }
+      ],
+      keralaTripSummary: "Léa y Love se encargarán de toda la logística (transporte, alojamiento, actividades). Cada invitado cubre sus gastos de viaje, ¡pero haremos que todo sea fácil y asequible!"
+    }
+  };
 
   const handleNavClick = (view) => {
     setActiveView(view);
@@ -84,9 +202,90 @@ function App() {
           )}
 
           {activeView === 'kerala' && (
-            <div className="bg-white bg-opacity-90 p-8 rounded-2xl shadow-xl border border-gray-300 max-w-md w-full">
-              <h2 className="text-2xl font-bold text-teal-800">Trip to Kerala</h2> {/* text-emerald-800 to text-teal-800 */}
-              <p className="mt-4 text-gray-700">Coming soon...</p>
+            <div className="bg-white bg-opacity-90 p-8 rounded-2xl shadow-xl border border-gray-300 max-w-2xl w-full">
+              <div className="flex justify-end space-x-3 mb-4">
+                <button
+                  type="button"
+                  onClick={() => setKeralaLang('en')}
+                  className={`p-1 rounded focus:outline-none focus:ring-2 focus:ring-teal-400 ${keralaLang === 'en' ? 'ring-2 ring-teal-500 opacity-100' : 'opacity-60 hover:opacity-100'}`}
+                >
+                  <span role="img" aria-label="English" className="text-2xl">🇬🇧</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setKeralaLang('fr')}
+                  className={`p-1 rounded focus:outline-none focus:ring-2 focus:ring-teal-400 ${keralaLang === 'fr' ? 'ring-2 ring-teal-500 opacity-100' : 'opacity-60 hover:opacity-100'}`}
+                >
+                  <span role="img" aria-label="French" className="text-2xl">🇫🇷</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setKeralaLang('es')}
+                  className={`p-1 rounded focus:outline-none focus:ring-2 focus:ring-teal-400 ${keralaLang === 'es' ? 'ring-2 ring-teal-500 opacity-100' : 'opacity-60 hover:opacity-100'}`}
+                >
+                  <span role="img" aria-label="Spanish" className="text-2xl">🇪🇸</span>
+                </button>
+              </div>
+              <h2 className="text-2xl font-bold text-teal-800 mb-8">{translations[keralaLang].keralaTripTitle}</h2>
+              <ol className="space-y-8">
+                {translations[keralaLang].keralaTripTimeline.map((step, idx) => (
+                  <li key={idx} className="flex flex-col md:flex-row items-center md:items-center md:space-x-6">
+                    <div className="flex flex-col items-center md:items-center w-full md:w-40 mb-4 md:mb-0">
+                      <span className="text-4xl mb-2">{step.icon}</span>
+                      <span className="text-teal-700 font-semibold text-lg text-center">{step.title}</span>
+                      <span className="text-gray-500 text-sm text-center">{step.date}</span>
+                    </div>
+                    <div className="flex-1 w-full flex flex-col items-center">
+                      {step.image && (
+                        <img src={step.image} alt={step.title} className="rounded-xl shadow-md mb-2 w-full max-w-xs mx-auto" style={{objectFit:'cover'}} />
+                      )}
+                      <p className="text-teal-800 text-base text-center whitespace-pre-line">{step.description}</p>
+                    </div>
+                    {idx < translations[keralaLang].keralaTripTimeline.length - 1 && (
+                      <div className="hidden md:block absolute left-1/2 top-full w-1 h-8 bg-teal-200 rounded-full" style={{transform: 'translateX(-50%)'}}></div>
+                    )}
+                  </li>
+                ))}
+              </ol>
+              {/* Cost breakdown section (after itinerary) */}
+              <div className="mt-10 mb-8 bg-white border border-teal-200 rounded-xl shadow p-6 max-w-md mx-auto">
+                <h3 className="text-lg font-bold text-teal-800 mb-4 flex items-center justify-center gap-2">
+                  <span role="img" aria-label="Money">💶</span>
+                  {keralaLang === 'fr' ? 'Coût estimé par personne' : keralaLang === 'es' ? 'Coste estimado por persona' : 'Estimated Cost per Person'}
+                </h3>
+                <ul className="divide-y divide-teal-100 text-teal-700 text-base mb-4">
+                  <li className="flex items-center justify-between py-2">
+                    <span className="flex items-center gap-2 text-left"><span role="img" aria-label="Flight">✈️</span>{keralaLang === 'fr' ? 'Vol Amritsar → Cochin' : keralaLang === 'es' ? 'Vuelo Amritsar → Cochin' : 'Flight Amritsar → Cochin'}</span>
+                    <span className="font-semibold">150€</span>
+                  </li>
+                  <li className="flex items-center justify-between py-2">
+                    <span className="flex items-center gap-2 text-left"><span role="img" aria-label="Bus">🚌</span>{keralaLang === 'fr' ? 'Transport terrestre (bus partagé)' : keralaLang === 'es' ? 'Transporte terrestre (bus compartido)' : 'Ground transport (shared bus)'}</span>
+                    <span className="font-semibold">50€</span>
+                  </li>
+                  <li className="flex items-center justify-between py-2">
+                    <span className="flex items-center gap-2 text-left"><span role="img" aria-label="Hotel">🏨</span>{keralaLang === 'fr' ? 'Hébergement à Munnar (2 nuits)' : keralaLang === 'es' ? 'Alojamiento en Munnar (2 noches)' : 'Accommodation in Munnar (2 nights)'}</span>
+                    <span className="font-semibold">50€</span>
+                  </li>
+                  <li className="flex items-center justify-between py-2">
+                    <span className="flex items-center gap-2 text-left"><span role="img" aria-label="Houseboat">🚤</span>{keralaLang === 'fr' ? 'Hébergement à Alappuzha (2 nuits houseboat)' : keralaLang === 'es' ? 'Alojamiento en Alappuzha (2 noches houseboat)' : 'Accommodation in Alappuzha (2 nights houseboat)'}</span>
+                    <span className="font-semibold">100€</span>
+                  </li>
+                  <li className="flex items-center justify-between py-2">
+                    <span className="flex items-center gap-2 text-left"><span role="img" aria-label="Meal">🍛</span>{keralaLang === 'fr' ? 'Repas (7 jours)' : keralaLang === 'es' ? 'Comidas (7 días)' : 'Meals (7 days)'}</span>
+                    <span className="font-semibold">100€</span>
+                  </li>
+                </ul>
+                <div className="text-xl font-extrabold text-teal-900 bg-teal-100 rounded-lg py-2 px-4 mb-2 flex items-center justify-center gap-2">
+                  <span role="img" aria-label="Total">🧮</span>
+                  {keralaLang === 'fr' ? 'Total estimé' : keralaLang === 'es' ? 'Total estimado' : 'Estimated Total'}: <span className="ml-2">450€</span>
+                </div>
+                <div className="text-xs text-teal-500 mt-1">
+                  {keralaLang === 'fr' ? 'Prix maximum par poste, à titre indicatif.' : keralaLang === 'es' ? 'Precio máximo por partida, orientativo.' : 'Maximum price per item, for reference.'}
+                </div>
+              </div>
+              <div className="mt-10 bg-teal-50 border border-teal-100 rounded-lg p-4 text-teal-700 text-base text-center">
+                {translations[keralaLang].keralaTripSummary}
+              </div>
             </div>
           )}
         </main>
