@@ -144,8 +144,8 @@ export default function App() {
     return (
       <Background>
         <div className="bg-white bg-opacity-95 px-10 py-8 rounded-2xl shadow-lg backdrop-blur-sm border border-gray-300 relative">
-          <div className="absolute top-[-20px] left-[-20px] w-16 h-16 opacity-70" style={{ backgroundImage: `url('/Moment romantique minimaliste en noir et blanc-Photoroom.png')`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}></div>
-          <div className="absolute bottom-[-20px] right-[-20px] w-16 h-16 opacity-70" style={{ backgroundImage: `url('/Moment romantique minimaliste en noir et blanc-Photoroom.png')`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}></div>
+          <div className="absolute top-[-20px] left-[-20px] w-16 h-16 opacity-70" style={{ backgroundImage: `url('${import.meta.env.BASE_URL}Moment romantique minimaliste en noir et blanc-Photoroom.png')`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}></div>
+          <div className="absolute bottom-[-20px] right-[-20px] w-16 h-16 opacity-70" style={{ backgroundImage: `url('${import.meta.env.BASE_URL}Moment romantique minimaliste en noir et blanc-Photoroom.png')`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}></div>
           <h2 className="text-3xl text-center text-emerald-700 relative">
             <span className="relative z-10">{t('thankYouMessageTitle')}</span>
             <span className="absolute bottom-1 left-0 w-full h-1 bg-gray-200 opacity-50"></span>
@@ -187,7 +187,7 @@ export default function App() {
           {/* Image Side: Appears on top on mobile (due to flex-col and DOM order), left on desktop (md:flex-row) */}
           <div className="w-full md:w-1/2 flex justify-center items-center p-6 md:p-8 md:border-r border-gray-200">
             <img 
-              src="/Moment romantique minimaliste en noir et blanc-Photoroom.png" 
+              src={`${import.meta.env.BASE_URL}Moment romantique minimaliste en noir et blanc-Photoroom.png`} 
               alt={t('altPareja')} 
               className="w-full max-w-[280px] sm:max-w-xs md:max-w-full rounded-2xl shadow-lg object-cover" 
               style={{
