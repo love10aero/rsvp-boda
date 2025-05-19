@@ -12,6 +12,15 @@ function TopBar({ onNavClick }) {
       <ul className="flex justify-center space-x-4 sm:space-x-6 md:space-x-8">
         <li>
           <button 
+            onClick={() => onNavClick('canva')}
+            className={navButtonBaseStyle}
+          >
+            <span role="img" aria-label="Home icon">🏠</span>
+            <span>Home</span>
+          </button>
+        </li>
+        <li>
+          <button 
             onClick={() => onNavClick('rsvp')}
             className={navButtonBaseStyle}
           >

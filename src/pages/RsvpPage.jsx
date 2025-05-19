@@ -299,6 +299,13 @@ export default function RsvpForm({ onNavClick }) {
 
         {form.attending === 'yes' ? (
           <div className="mt-5">
+            <div className="flex justify-center mb-4">              <img
+              src={`${import.meta.env.BASE_URL}tyga.png`}
+              alt="Tyga the cat"
+              className="w-40 h-auto object-contain rounded-lg shadow-md"
+              style={{ background: '#fff', maxHeight: '180px' }}
+            />
+            </div>
             <p className="text-center text-teal-600 text-lg font-medium">{t('thankYouSeeYou')}</p>
 
             <div className="mt-6 bg-teal-50 border border-teal-100 rounded-lg p-4">
