@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Quicksand', 'sans-serif'],
+        sans: ['Fraunces', 'Cormorant Garamond', 'Playfair Display', 'sans-serif'],
       },
     },
   },
