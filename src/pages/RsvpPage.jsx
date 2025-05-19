@@ -56,6 +56,10 @@ Este viaje es una oportunidad para compartir más tiempo juntos en un entorno pr
 
 Cada invitado cubrirá sus gastos de viaje, pero nos aseguraremos de que todo sea fácil de organizar y lo más asequible posible.`,
     keralaTripLang: "Idioma",
+    phoneLabel: "Tu número de teléfono (WhatsApp)",
+    phoneDescription: "Usaremos este número para enviarte información práctica sobre la boda por WhatsApp.",
+    phonePlaceholder: "Ejemplo: +34 600 123 456",
+    phoneRequired: "Por favor, introduce tu número de teléfono.",
   },
   fr: {
     rsvpTitle: "RSVP – Confirme ta présence !",
@@ -112,6 +116,10 @@ Ce voyage post-mariage est une belle occasion de partager encore plus de moments
 
 Chaque invité prend en charge ses frais de voyage, mais nous veillerons à ce que tout soit facile à organiser et aussi abordable que possible.`,
     keralaTripLang: "Langue",
+    phoneLabel: "Ton numéro de téléphone (WhatsApp)",
+    phoneDescription: "Nous utiliserons ce numéro pour t’envoyer des infos pratiques sur le mariage via WhatsApp.",
+    phonePlaceholder: "Exemple : +33 6 12 34 56 78",
+    phoneRequired: "Merci d'indiquer ton numéro de téléphone.",
   },
   en: {
     keralaTripTitle: "POST-WEDDING TRIP: Discover Kerala",
@@ -140,6 +148,10 @@ This post-wedding trip is a wonderful opportunity to spend more time together in
 
 Each guest will cover their own travel expenses, but we’ll make sure everything is easy to organise and as affordable as possible.`,
     keralaTripLang: "Language",
+    phoneLabel: "Your phone number (WhatsApp)",
+    phoneDescription: "We’ll use this number to send you practical information about the wedding via WhatsApp.",
+    phonePlaceholder: "e.g. +44 7123 456789",
+    phoneRequired: "Please enter your phone number.",
   }
 };
 
@@ -149,14 +161,16 @@ export default function RsvpForm({ onNavClick }) {
     plusOne: '',
     mainGuestName: '',
     plusOneName: '',
-    kerala: ''
+    kerala: '',
+    phone: ''
   });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
-  const totalSteps = 4;
+  const totalSteps = 5;
   const [language, setLanguage] = useState('es');
   const [showModal, setShowModal] = useState(false);
+  const [phoneError, setPhoneError] = useState('');
 
   const t = (key) => translations[language][key] || key;
 
@@ -170,6 +184,7 @@ export default function RsvpForm({ onNavClick }) {
   };
 
   const nextStep = () => {
+    if (currentStep === 5) return;
     setCurrentStep((prev) => Math.min(prev + 1, totalSteps));
   };
 
@@ -180,6 +195,12 @@ export default function RsvpForm({ onNavClick }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (isSubmitting) return;
+    if (!form.phone.trim()) {
+      setPhoneError(t('phoneRequired'));
+      setCurrentStep(5);
+      return;
+    }
+    setPhoneError('');
 
     setIsSubmitting(true);
 
@@ -194,7 +215,8 @@ export default function RsvpForm({ onNavClick }) {
           "RSVP Date": rsvpDate,
           assist: true,
           "plus one": form.plusOne === 'yes',
-          kerala: form.kerala === 'yes'
+          kerala: form.kerala === 'yes',
+          phonenumber: form.phone
         }
       });
 
@@ -205,7 +227,8 @@ export default function RsvpForm({ onNavClick }) {
             "RSVP Date": rsvpDate,
             assist: true,
             "plus one": true,
-            kerala: form.kerala === 'yes'
+            kerala: form.kerala === 'yes',
+            phonenumber: form.phone
           }
         });
       }
@@ -216,7 +239,8 @@ export default function RsvpForm({ onNavClick }) {
           "RSVP Date": rsvpDate,
           assist: false,
           "plus one": false,
-          kerala: false
+          kerala: false,
+          phonenumber: form.phone
         }
       });
     }
@@ -365,7 +389,7 @@ export default function RsvpForm({ onNavClick }) {
         </div>
 
         <div className="flex justify-center space-x-2 mb-6">
-          {[1, 2, 3, 4].map((step) => (
+          {[1, 2, 3, 4, 5].map((step) => (
             <div
               key={step}
               className={`w-3 h-3 rounded-full ${currentStep >= step ? 'bg-teal-600' : 'bg-teal-200'}`}
@@ -585,7 +609,7 @@ export default function RsvpForm({ onNavClick }) {
           <>
             <div className="mb-4">
               <h2 className="text-xl sm:text-lg font-medium text-teal-800 mb-3">{t('keralaQuestion')}</h2>
-              <p className="text-teal-600 text-sm sm:text-xs mb-3 cursor-pointer underline" onClick={() => setShowModal(true)}>{t('keralaDetails')}</p>
+              <p className="text-teal-600 text-sm mb-2 cursor-pointer underline" onClick={() => setShowModal(true)}>{t('keralaDetails')}</p>
               {showModal && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
                   <div className="bg-white rounded-xl shadow-lg p-6 max-w-xs w-full text-center">
@@ -655,10 +679,51 @@ export default function RsvpForm({ onNavClick }) {
                 {t('backButton')}
               </button>
               <button
-                type="submit"
-                disabled={!form.kerala || isSubmitting}
+                type="button"
+                onClick={nextStep}
+                disabled={!form.kerala}
                 className={`flex-1 py-3 rounded-lg transition font-medium border shadow-md ${
-                  !form.kerala || isSubmitting
+                  !form.kerala
+                    ? 'bg-gray-200 cursor-not-allowed text-gray-500 border-gray-300'
+                    : 'bg-teal-600 hover:bg-teal-700 text-white border-teal-300'
+                }`}
+              >
+                {t('nextButton')}
+              </button>
+            </div>
+          </>
+        )}
+
+        {currentStep === 5 && (
+          <>
+            <div className="mb-4">
+              <h2 className="text-xl sm:text-lg font-medium text-teal-800 mb-3">{t('phoneLabel')}</h2>
+              <p className="text-teal-600 text-sm mb-2">{t('phoneDescription')}</p>
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                value={form.phone}
+                onChange={e => { setForm({ ...form, phone: e.target.value }); setPhoneError(''); }}
+                className="w-full p-3 border border-teal-200 rounded-lg focus:ring focus:ring-teal-200 focus:border-teal-400 outline-none transition text-base sm:text-sm"
+                placeholder={t('phonePlaceholder')}
+                required
+              />
+              {phoneError && <p className="text-red-600 text-xs mt-1">{phoneError}</p>}
+            </div>
+            <div className="mt-6 flex space-x-3">
+              <button
+                type="button"
+                onClick={prevStep}
+                className="flex-1 bg-white border border-teal-300 hover:bg-gray-50 text-teal-700 py-3 rounded-lg transition font-medium shadow-sm"
+              >
+                {t('backButton')}
+              </button>
+              <button
+                type="submit"
+                disabled={!form.phone.trim() || isSubmitting}
+                className={`flex-1 py-3 rounded-lg transition font-medium border shadow-md ${
+                  !form.phone.trim() || isSubmitting
                     ? 'bg-gray-200 cursor-not-allowed text-gray-500 border-gray-300'
                     : 'bg-teal-600 hover:bg-teal-700 text-white border-teal-300'
                 }`}
