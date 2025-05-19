@@ -12,18 +12,6 @@ function TopBar({ onNavClick }) {
       <ul className="flex justify-center space-x-4 sm:space-x-6 md:space-x-8">
         <li>
           <button 
-            onClick={() => onNavClick('canva')}
-            className={navButtonBaseStyle}
-          >
-            <img 
-              src="/anillo-de-bodas.png" 
-              alt="Home icon" 
-              className="w-6 h-6 brightness-0 invert"
-            />
-          </button>
-        </li>
-        <li>
-          <button 
             onClick={() => onNavClick('rsvp')}
             className={navButtonBaseStyle}
           >
