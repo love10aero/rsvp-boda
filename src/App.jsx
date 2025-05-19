@@ -15,8 +15,11 @@ function TopBar({ onNavClick }) {
             onClick={() => onNavClick('canva')}
             className={navButtonBaseStyle}
           >
-            <span role="img" aria-label="Home icon">🏠</span>
-            <span>Home</span>
+            <img 
+              src="/anillo-de-bodas.png" 
+              alt="Home icon" 
+              className="w-6 h-6 brightness-0 invert"
+            />
           </button>
         </li>
         <li>
