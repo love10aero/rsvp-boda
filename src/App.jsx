@@ -34,7 +34,7 @@ function TopBar({ onNavClick }) {
             className={navButtonBaseStyle}
           >
             <span role="img" aria-label="Trip icon">✈️</span>
-            <span>Post-wedding Trip</span>
+            <span>Post-Wedding Trip</span>
           </button>
         </li>
       </ul>
@@ -49,7 +49,7 @@ function App() {
 
   const translations = {
     en: {
-      keralaTripTitle: "Post-wedding Trip",
+      keralaTripTitle: "Post-Wedding Trip",
       keralaTripTimeline: [
         {
           icon: "💍",
