@@ -73,7 +73,7 @@ const venueTranslations = {
     ]
   },
   fr: {
-    title: 'Infos pratiques pour les invités venant d’Europe',
+    title: 'Infos pratiques pour les invités',
     sections: [
       {
         icon: '🛂',
@@ -144,7 +144,7 @@ const venueTranslations = {
     ]
   },
   es: {
-    title: 'Información práctica para invitados de Europa',
+    title: 'Información práctica para invitados',
     sections: [
       {
         icon: '🛂',
