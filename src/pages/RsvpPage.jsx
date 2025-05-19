@@ -281,24 +281,6 @@ export default function RsvpForm({ onNavClick }) {
   if (submitted) {
     return (
       <div className="bg-white bg-opacity-95 px-10 py-8 rounded-2xl shadow-lg backdrop-blur-sm border border-gray-300 relative max-w-lg w-full">
-        <div
-          className="absolute top-[-20px] left-[-20px] w-16 h-16 opacity-70"
-          style={{
-            backgroundImage: `url('${import.meta.env.BASE_URL}Moment romantique minimaliste en noir et blanc-Photoroom.png')`,
-            backgroundPosition: 'center',
-            backgroundSize: 'contain',
-            backgroundRepeat: 'no-repeat'
-          }}
-        ></div>
-        <div
-          className="absolute bottom-[-20px] right-[-20px] w-16 h-16 opacity-70"
-          style={{
-            backgroundImage: `url('${import.meta.env.BASE_URL}Moment romantique minimaliste en noir et blanc-Photoroom.png')`,
-            backgroundPosition: 'center',
-            backgroundSize: 'contain',
-            backgroundRepeat: 'no-repeat'
-          }}
-        ></div>
         <h2 className="text-3xl text-center text-teal-700 relative">
           <span className="relative z-10">{t('thankYouMessageTitle')}</span>
           <span className="absolute bottom-1 left-0 w-full h-1 bg-gray-200 opacity-50"></span>
