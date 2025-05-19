@@ -167,7 +167,6 @@ export default function RsvpForm({ onNavClick }) {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
-  const totalSteps = 5;
   const [language, setLanguage] = useState('es');
   const [showModal, setShowModal] = useState(false);
   const [phoneError, setPhoneError] = useState('');
@@ -183,19 +182,31 @@ export default function RsvpForm({ onNavClick }) {
     setForm({ ...form, [name]: value });
   };
 
-  const nextStep = () => {
-    if (currentStep === 5) return;
-    setCurrentStep((prev) => Math.min(prev + 1, totalSteps));
-  };
+  // Steps logic
+  let steps = [1];
+  if (form.attending === 'yes') {
+    steps = [1, 2, 3, 4, 5];
+  } else if (form.attending === 'no') {
+    steps = [1, 3]; // Only ask name, then submit
+  }
 
-  const prevStep = () => {
-    setCurrentStep((prev) => Math.max(prev - 1, 1));
+  // Find the current step index in the steps array
+  const currentStepIndex = steps.indexOf(currentStep);
+  const goToNextStep = () => {
+    if (currentStepIndex < steps.length - 1) {
+      setCurrentStep(steps[currentStepIndex + 1]);
+    }
+  };
+  const goToPrevStep = () => {
+    if (currentStepIndex > 0) {
+      setCurrentStep(steps[currentStepIndex - 1]);
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (isSubmitting) return;
-    if (!form.phone.trim()) {
+    if (form.attending === 'yes' && !form.phone.trim()) {
       setPhoneError(t('phoneRequired'));
       setCurrentStep(5);
       return;
@@ -371,7 +382,7 @@ export default function RsvpForm({ onNavClick }) {
         </div>
 
         <div className="flex justify-center space-x-2 mb-6">
-          {[1, 2, 3, 4, 5].map((step) => (
+          {steps.map((step) => (
             <div
               key={step}
               className={`w-3 h-3 rounded-full ${currentStep >= step ? 'bg-teal-600' : 'bg-teal-200'}`}
@@ -434,7 +445,7 @@ export default function RsvpForm({ onNavClick }) {
             <div className="mt-6">
               <button
                 type="button"
-                onClick={nextStep}
+                onClick={goToNextStep}
                 disabled={!form.attending}
                 className={`w-full py-3 rounded-lg transition font-medium border shadow-md ${
                   form.attending
@@ -503,14 +514,14 @@ export default function RsvpForm({ onNavClick }) {
             <div className="mt-6 flex space-x-3">
               <button
                 type="button"
-                onClick={prevStep}
+                onClick={goToPrevStep}
                 className="flex-1 bg-white border border-teal-300 hover:bg-gray-50 text-teal-700 py-3 rounded-lg transition font-medium shadow-sm"
               >
                 {t('backButton')}
               </button>
               <button
                 type="button"
-                onClick={nextStep}
+                onClick={goToNextStep}
                 disabled={!form.plusOne}
                 className={`flex-1 py-3 rounded-lg transition font-medium border shadow-md ${
                   form.plusOne
@@ -566,28 +577,42 @@ export default function RsvpForm({ onNavClick }) {
             <div className="mt-6 flex space-x-3">
               <button
                 type="button"
-                onClick={prevStep}
+                onClick={goToPrevStep}
                 className="flex-1 bg-white border border-teal-300 hover:bg-gray-50 text-teal-700 py-3 rounded-lg transition font-medium shadow-sm"
               >
                 {t('backButton')}
               </button>
-              <button
-                type="button"
-                onClick={nextStep}
-                disabled={!form.mainGuestName.trim() || (form.plusOne === 'yes' && !form.plusOneName.trim())}
-                className={`flex-1 py-3 rounded-lg transition font-medium border shadow-md ${
-                  !form.mainGuestName.trim() || (form.plusOne === 'yes' && !form.plusOneName.trim())
-                    ? 'bg-gray-200 cursor-not-allowed text-gray-500 border-gray-300'
-                    : 'bg-teal-600 hover:bg-teal-700 text-white border-teal-300'
-                }`}
-              >
-                {t('nextButton')}
-              </button>
+              {form.attending === 'no' ? (
+                <button
+                  type="submit"
+                  disabled={!form.mainGuestName.trim() || isSubmitting}
+                  className={`flex-1 py-3 rounded-lg transition font-medium border shadow-md ${
+                    !form.mainGuestName.trim() || isSubmitting
+                      ? 'bg-gray-200 cursor-not-allowed text-gray-500 border-gray-300'
+                      : 'bg-teal-600 hover:bg-teal-700 text-white border-teal-300'
+                  }`}
+                >
+                  {isSubmitting ? (t('submitButton') === "Enviar RSVP" ? "Enviando..." : "Envoi en cours...") : t('submitButton')}
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={goToNextStep}
+                  disabled={!form.mainGuestName.trim() || (form.plusOne === 'yes' && !form.plusOneName.trim())}
+                  className={`flex-1 py-3 rounded-lg transition font-medium border shadow-md ${
+                    !form.mainGuestName.trim() || (form.plusOne === 'yes' && !form.plusOneName.trim())
+                      ? 'bg-gray-200 cursor-not-allowed text-gray-500 border-gray-300'
+                      : 'bg-teal-600 hover:bg-teal-700 text-white border-teal-300'
+                  }`}
+                >
+                  {t('nextButton')}
+                </button>
+              )}
             </div>
           </>
         )}
 
-        {currentStep === 4 && (
+        {currentStep === 4 && form.attending === 'yes' && (
           <>
             <div className="mb-4">
               <h2 className="text-xl sm:text-lg font-medium text-teal-800 mb-3">{t('keralaQuestion')}</h2>
@@ -655,14 +680,14 @@ export default function RsvpForm({ onNavClick }) {
             <div className="mt-6 flex space-x-3">
               <button
                 type="button"
-                onClick={prevStep}
+                onClick={goToPrevStep}
                 className="flex-1 bg-white border border-teal-300 hover:bg-gray-50 text-teal-700 py-3 rounded-lg transition font-medium shadow-sm"
               >
                 {t('backButton')}
               </button>
               <button
                 type="button"
-                onClick={nextStep}
+                onClick={goToNextStep}
                 disabled={!form.kerala}
                 className={`flex-1 py-3 rounded-lg transition font-medium border shadow-md ${
                   !form.kerala
@@ -696,7 +721,7 @@ export default function RsvpForm({ onNavClick }) {
             <div className="mt-6 flex space-x-3">
               <button
                 type="button"
-                onClick={prevStep}
+                onClick={goToPrevStep}
                 className="flex-1 bg-white border border-teal-300 hover:bg-gray-50 text-teal-700 py-3 rounded-lg transition font-medium shadow-sm"
               >
                 {t('backButton')}
