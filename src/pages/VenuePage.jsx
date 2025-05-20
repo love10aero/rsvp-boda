@@ -45,7 +45,6 @@ const venueTranslations = {
         content: [
           'Leave valuables at home: precious jewelry, luxury watches, laptops, etc.',
           'Bring only: mobile phone, international bank card, a bit of cash (euros or rupees).',
-          'Use a discreet and secure bag and, at the hotel, a safe for your documents.',
           'India is generally welcoming: stay alert and you’ll be fine!'
         ]
       },
@@ -90,8 +89,8 @@ const venueTranslations = {
         icon: '✈️',
         heading: 'Assurance annulation',
         content: [
-          'Étant donné le contexte international actuel, nous vous recommandons vivement de souscrire à une assurance annulation de vol lors de l’achat de vos billets.',
-          'Cela vous offrira plus de flexibilité et de tranquillité d’esprit en cas d’imprévu.'
+          'Étant donné le contexte international actuel, nous vous recommandons de souscrire à une assurance annulation de vol lors de l’achat de vos billets.',
+          'Cela vous offrira plus de flexibilité et de tranquilité d’esprit en cas d’imprévu.'
         ]
       },
       {
@@ -116,7 +115,6 @@ const venueTranslations = {
         content: [
           'Laissez les objets de valeur à la maison : bijoux précieux, montres de luxe, ordinateurs, etc.',
           'Apportez uniquement : téléphone portable, carte bancaire internationale, un peu de liquide (euros ou roupies).',
-          'Utilisez un sac discret et sécurisé et, à l’hôtel, un coffre-fort pour vos documents.',
           'Globalement, l’Inde est accueillante : restez attentifs et tout ira bien !'
         ]
       },
@@ -187,7 +185,6 @@ const venueTranslations = {
         content: [
           'Deja los objetos de valor en casa: joyas, relojes de lujo, ordenadores, etc.',
           'Lleva solo: teléfono móvil, tarjeta bancaria internacional, algo de efectivo (euros o rupias).',
-          'Utiliza una bolsa discreta y segura y, en el hotel, una caja fuerte para tus documentos.',
           'En general, la India es acogedora: ¡mantente atento y todo irá bien!'
         ]
       },

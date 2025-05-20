@@ -53,13 +53,13 @@ function App() {
       keralaTripTimeline: [
         {
           icon: "💍",
-          title: "Wedding in Punjab",
+          title: "Wedding in Punjab, Northwest India",
           date: "11 January 2026",
           description: "Celebrate the wedding in Punjab."
         },
         {
           icon: "✈️",
-          title: "Flight to Kerala",
+          title: "Flight to Kerala, South India",
           date: "13 January 2026",
           description: "Fly from Amritsar (ATQ) to Cochin International Airport (COK), Kerala. Spend one night in Cochin to rest before the road to the mountains."
         },
@@ -79,31 +79,31 @@ function App() {
         },
         {
           icon: "🌴",
-          title: "Cochin – Relax Before Departure",
+          title: "Beach day – Relax Before Departure",
           date: "18 January 2026",
-          description: "Return to Cochin for a final day of rest, shopping or visiting the old town before departure."
+          description: "Return to the ground, last night at the beachside for a final day before departure."
         },
         {
           icon: "🛬",
-          title: "Return from Kerala",
+          title: "Return",
           date: "19 January 2026",
           description: "End of the post-wedding trip. Take your return flight from Cochin International Airport (COK)."
         }
       ],
-      keralaTripSummary: "Léa and Love will take care of all logistics (transport, accommodation, activities). Each guest covers their own travel expenses, but we’ll make everything easy and affordable!"
+      keralaTripSummary: "We will take care of logistics and trip organization (ground transport, accommodation, activities). Each guest covers their own travel expenses, but we’ll make everything easy and affordable!"
     },
     fr: {
-      keralaTripTitle: "Voyage au Kerala",
+      keralaTripTitle: "Voyage dans le Kerala, Sud de l'Inde",
       keralaTripTimeline: [
         {
           icon: "💍",
-          title: "Pendjab (Nord-Ouest de l'Inde)",
+          title: "Pendjab, Nord-Ouest de l'Inde",
           date: "11 janvier 2026",
           description: "Mariage de Léa et Love"
         },
         {
           icon: "✈️",
-          title: "Départ pour le Kerala",
+          title: "Départ pour la région du Kerala, Sud de l'Inde",
           date: "13 janvier 2026",
           description: "Vol depuis Amritsar (ATQ) vers l'aéroport international de Cochin (COK), Kerala. Nuit à Cochin pour se reposer avant la route vers les montagnes."
         },
@@ -123,9 +123,9 @@ function App() {
         },
         {
           icon: "🌴",
-          title: "Cochin – Détente avant le départ",
+          title: "Dernier jour à la plage – Détente avant le départ",
           date: "18 janvier 2026",
-          description: "Retour à Cochin pour une dernière journée de repos, shopping ou visite de la vieille ville avant le départ."
+          description: "Retour sur la terre ferme et nuit au bord de la plage pour une dernière journée avant le départ."
         },
         {
           icon: "🛬",
@@ -134,10 +134,10 @@ function App() {
           description: "Fin du voyage post-mariage. Vol retour depuis l'aéroport international de Cochin (COK)."
         }
       ],
-      keralaTripSummary: "Léa et Love s'occupent de la logistique (transport, hébergement, activités) - c'est pour cela que votre confirmation doit être faite d'ici fin juin 2025 :). Chaque invité prend en charge ses frais de voyage, mais nous veillerons à ce que tout soit facile et abordable !"
+      keralaTripSummary: "Nous nous occuperont de la logistique et de l'organisation du voyage (transport terrestre, hébergement, activités) - c'est pour cela que votre confirmation doit être faite d'ici fin juin 2025 :). Chaque invité prend en charge ses frais de voyage, mais nous veillerons à ce que tout soit facile et abordable !"
     },
     es: {
-      keralaTripTitle: "Viaje a Kerala",
+      keralaTripTitle: "Viaje a Kerala, Sur de India",
       keralaTripTimeline: [
         {
           icon: "💍",
@@ -147,7 +147,7 @@ function App() {
         },
         {
           icon: "✈️",
-          title: "Vuelo a Kerala",
+          title: "Vuelo a Kerala, Sur de India",
           date: "13 enero 2026",
           description: "Vuelo desde Amritsar (ATQ) al Aeropuerto Internacional de Cochin (COK), Kerala. Pasamos una noche en Cochin para descansar antes de ir a las montañas."
         },
@@ -169,16 +169,16 @@ function App() {
           icon: "🌴",
           title: "Cochin – Relax antes de la salida",
           date: "18 enero 2026",
-          description: "Regreso a Cochin para un último día de descanso, compras o visita al casco antiguo antes de la salida."
+          description: "Regreso a la tierra para una última noche cerca de la playa, último día antes de la salida."
         },
         {
           icon: "🛬",
-          title: "Regreso desde Kerala",
+          title: "Regreso",
           date: "19 enero 2026",
           description: "Fin del viaje post-boda. Vuelo de regreso desde el Aeropuerto Internacional de Cochin (COK)."
         }
       ],
-      keralaTripSummary: "Nos encargaremos de la logística (transporte, alojamiento, actividades). Cada invitado cubre sus gastos de viaje, ¡pero haremos que todo sea fácil y asequible!"
+      keralaTripSummary: "Nos encargaremos de la logística y de la organización el viaje (transporte terrestre, alojamiento, actividades). Cada invitado cubre sus gastos de viaje, ¡pero haremos que todo sea fácil y asequible!"
     }
   };
 
