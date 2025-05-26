@@ -71,7 +71,7 @@ Cada invitado cubrirá sus gastos de viaje, pero nos aseguraremos de que todo se
     guestDetailsTitle: "Noms des invités",
     mainGuestNameLabel: "Ton nom complet",
     mainGuestNamePlaceholder: "Entre ton nom complet",
-    plusOneNameLabel: "Nom complet de ton +1",
+    plusOneNameLabel: "Nom complet de ton partenaire de vie",
     plusOneNamePlaceholder: "Entre le nom de ton accompagnant(e)",
     keralaQuestion: "Es-tu intéressé pour te joindre au voyage prévu dans le Kerala après le mariage (1 semaine) ?",
     keralaDetails: "Détails",
