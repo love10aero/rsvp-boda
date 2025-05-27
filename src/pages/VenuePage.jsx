@@ -5,6 +5,14 @@ const venueTranslations = {
     title: 'Venue Details & Practical Info',
     sections: [
       {
+        icon: '🏨',
+        heading: 'Arrival and accommodation in Punjab',
+        content: [
+          'Transport from ATQ: When you arrive at Amritsar Airport (ATQ), you’ll easily find taxis to reach our area, in the Jalandhar region. The exact address will be shared with you via message once your attendance is confirmed.',
+          'Accommodation: We’ll do our best to host guests with the family in the village of Love. If that’s not possible, we’ll send you a link to book nearby accommodation. Prices range from €80 to €130 for 5 nights / 2 people, depending on the room type (Standard or Deluxe).'
+        ]
+      },
+      {
         icon: '🛂',
         heading: 'Required Documents',
         content: [
@@ -75,6 +83,14 @@ const venueTranslations = {
     title: 'Infos pratiques pour les invités',
     sections: [
       {
+        icon: '🏨',
+        heading: 'Arrivée et hébergement au Punjab',
+        content: [
+          'Transport depuis ATQ : En arrivant à l’aéroport d’Amritsar (ATQ), vous trouverez facilement des taxis pour venir jusqu’à chez nous, dans la région de Jalandhar. L’adresse exacte vous sera envoyée par message une fois votre venue confirmée.',
+          'Logement : On fera de notre mieux pour loger les invité·es en famille, dans le village de Love. Si ce n’est pas possible, on vous enverra un lien pour réserver un hébergement à proximité. Les tarifs sont d’environ 80 à 130 € pour 5 nuits / 2 personnes, selon le type de chambre (Standard ou Deluxe).'
+        ]
+      },
+      {
         icon: '🛂',
         heading: 'Documents nécessaires',
         content: [
@@ -144,6 +160,14 @@ const venueTranslations = {
   es: {
     title: 'Información práctica para invitados',
     sections: [
+      {
+        icon: '🏨',
+        heading: 'Llegada y alojamiento en el Punjab',
+        content: [
+          'Transporte desde ATQ: Al llegar al aeropuerto de Amritsar (ATQ), encontraréis fácilmente taxis para venir hasta nuestra zona, en la región de Jalandhar. La dirección exacta se enviará por mensaje una vez confirmada vuestra asistencia.',
+          'Alojamiento: Haremos todo lo posible por alojar a los invitados con la familia, en el pueblo de Love. Si no fuera posible, os enviaremos un enlace para reservar un alojamiento cercano. El precio es de 80 a 130 € por 5 noches / 2 personas, según el tipo de habitación (Estándar o Deluxe).'
+        ]
+      },
       {
         icon: '🛂',
         heading: 'Documentos necesarios',
