@@ -46,6 +46,7 @@ function TopBar({ onNavClick }) {
 function App() {
   const [activeView, setActiveView] = useState('canva'); // 'canva', 'rsvp', 'venue', 'kerala'
   const [keralaLang, setKeralaLang] = useState('en'); // Language state for Kerala section
+  const [showFlightModal, setShowFlightModal] = useState(false);
 
   const translations = {
     en: {
@@ -61,7 +62,13 @@ function App() {
           icon: "✈️",
           title: "Flight to Kerala, South India",
           date: "13 January 2026",
-          description: "Fly from Amritsar (ATQ) to Cochin International Airport (COK), Kerala. Spend one night in Cochin to rest before the road to the mountains."
+          description: (
+            <>
+              Fly from Amritsar (ATQ) to Cochin International Airport (COK), Kerala. 
+              <button type="button" onClick={() => setShowFlightModal(true)} className="text-teal-700 underline ml-1">See flight details</button>.
+              Spend one night in Cochin to rest before the road to the mountains.
+            </>
+          )
         },
         {
           icon: "🏞️",
@@ -105,7 +112,13 @@ function App() {
           icon: "✈️",
           title: "Départ pour la région du Kerala, Sud de l'Inde",
           date: "13 janvier 2026",
-          description: "Vol depuis Amritsar (ATQ) vers l'aéroport international de Cochin (COK), Kerala. Nuit à Cochin pour se reposer avant la route vers les montagnes."
+          description: (
+            <>
+              Vol depuis Amritsar (ATQ) vers l'aéroport international de Cochin (COK), Kerala. 
+              <button type="button" onClick={() => setShowFlightModal(true)} className="text-teal-700 underline ml-1">Voir les détails du vol</button>.
+              Nuit à Cochin pour se reposer avant la route vers les montagnes.
+            </>
+          )
         },
         {
           icon: "🏞️",
@@ -149,7 +162,13 @@ function App() {
           icon: "✈️",
           title: "Vuelo a Kerala, Sur de India",
           date: "13 enero 2026",
-          description: "Vuelo desde Amritsar (ATQ) al Aeropuerto Internacional de Cochin (COK), Kerala. Pasamos una noche en Cochin para descansar antes de ir a las montañas."
+          description: (
+            <>
+              Vuelo desde Amritsar (ATQ) al Aeropuerto Internacional de Cochin (COK), Kerala. 
+              <button type="button" onClick={() => setShowFlightModal(true)} className="text-teal-700 underline ml-1">Ver detalles del vuelo</button>.
+              Pasamos una noche en Cochin para descansar antes de ir a las montañas.
+            </>
+          )
         },
         {
           icon: "🏞️",
@@ -297,6 +316,16 @@ function App() {
               </div>
             </div>
           )}
+
+          {showFlightModal && (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
+      <div className="bg-white rounded-xl shadow-lg p-6 max-w-md w-full text-center relative">
+        <button onClick={() => setShowFlightModal(false)} className="absolute top-2 right-2 text-gray-400 hover:text-teal-600 text-2xl font-bold">&times;</button>
+        <img src="/flight-details.png" alt="Flight details" className="w-full rounded-lg mb-2" />
+        <div className="text-sm text-teal-700 mt-2">{keralaLang === 'fr' ? 'Détails du vol Amritsar → Kerala' : keralaLang === 'es' ? 'Detalles del vuelo Amritsar → Kerala' : 'Flight details Amritsar → Kerala'}</div>
+      </div>
+    </div>
+  )}
         </main>
       </div>
     </Background>
