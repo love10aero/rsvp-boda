@@ -78,17 +78,24 @@ function App() {
           image: "/munnar.jpg"
         },
         {
+          icon: "🏖️",
+          title: "Marari Beach – Relax by the Sea",
+          date: "16–18 January 2026",
+          description: "2 days at Marari Beach: Relax on pristine white sand beaches, enjoy beachside activities, and unwind by the Arabian Sea.",
+          image: "/marari.jpeg"
+        },
+        {
           icon: "🚤",
           title: "Alappuzha (Alleppey) – Backwaters",
-          date: "16–18 January 2026",
-          description: "2 days in Alleppey: Cruise on a traditional houseboat, observe village life along the canals, and enjoy Kerala-style meals aboard.",
+          date: "18 January 2026",
+          description: "Day cruise in Alleppey: Cruise on a traditional houseboat, observe village life along the canals, and enjoy Kerala-style meals aboard.",
           image: "/allepey.jpg"
         },
         {
-          icon: "🌴",
-          title: "Beach day – Relax Before Departure",
-          date: "18 January 2026",
-          description: "Return to the ground, last night at the beachside for a final day before departure."
+          icon: "🏨",
+          title: "Airport Hotel – Final Night",
+          date: "18–19 January 2026",
+          description: "Stay at a hotel near Cochin International Airport for convenience before departure."
         },
         {
           icon: "🛬",
@@ -97,7 +104,7 @@ function App() {
           description: "End of the post-wedding trip. Take your return flight from Cochin International Airport (COK)."
         }
       ],
-      keralaTripSummary: "We will take care of logistics and trip organization (ground transport, accommodation, activities). Each guest covers their own travel expenses, but we’ll make everything easy and affordable!"
+      keralaTripSummary: "We will take care of logistics and trip organization (ground transport, accommodation, activities). Each guest covers all their own expenses (flights, accommodation, meals, transport, etc.), but we'll make everything easy and affordable!"
     },
     fr: {
       keralaTripTitle: "Voyage dans le Kerala, Sud de l'Inde",
@@ -128,17 +135,24 @@ function App() {
           image: "/munnar.jpg"
         },
         {
+          icon: "🏖️",
+          title: "Plage de Marari – Détente au bord de mer",
+          date: "16–18 janvier 2026",
+          description: "2 jours à la plage de Marari : Détente sur des plages de sable blanc immaculées, activités de plage, et relaxation au bord de la mer d'Arabie.",
+          image: "/marari-beach.jpg"
+        },
+        {
           icon: "🚤",
           title: "Alappuzha (Alleppey) – Backwaters",
-          date: "16–18 janvier 2026",
-          description: "2 jours à Alleppey : Croisière dans les canaux backwaters à bord d'une houseboat traditionnelle (maison-bateau), moments conviviaux, observation de la vie locale au fil de l'eau, et découverte des spécialités culinaires du Kerala préparées par le chef à bord.",
+          date: "18 janvier 2026",
+          description: "Croisière d'une journée à Alleppey : Croisière dans les canaux backwaters à bord d'une houseboat traditionnelle, observation de la vie locale au fil de l'eau, et découverte des spécialités culinaires du Kerala préparées par le chef à bord.",
           image: "/allepey.jpg"
         },
         {
-          icon: "🌴",
-          title: "Dernier jour à la plage – Détente avant le départ",
-          date: "18 janvier 2026",
-          description: "Retour sur la terre ferme et nuit au bord de la plage pour une dernière journée avant le départ."
+          icon: "🏨",
+          title: "Hôtel près de l'aéroport – Dernière nuit",
+          date: "18–19 janvier 2026",
+          description: "Nuit dans un hôtel près de l'aéroport international de Cochin pour faciliter le départ."
         },
         {
           icon: "🛬",
@@ -147,7 +161,7 @@ function App() {
           description: "Fin du voyage post-mariage. Vol retour depuis l'aéroport international de Cochin (COK)."
         }
       ],
-      keralaTripSummary: "Nous nous occuperont de la logistique et de l'organisation du voyage (transport terrestre, hébergement, activités) - c'est pour cela que votre confirmation doit être faite d'ici fin juin 2025 :). Chaque invité prend en charge ses frais de voyage, mais nous veillerons à ce que tout soit facile et abordable !"
+      keralaTripSummary: "Nous nous occuperont de la logistique et de l'organisation du voyage (transport terrestre, hébergement, activités) - c'est pour cela que votre confirmation doit être faite d'ici fin juin 2025 :). Chaque invité prend en charge tous ses frais (vols, hébergement, repas, transport, etc.), mais nous veillerons à ce que tout soit facile et abordable !"
     },
     es: {
       keralaTripTitle: "Viaje a Kerala, Sur de India",
@@ -178,17 +192,24 @@ function App() {
           image: "/munnar.jpg"
         },
         {
+          icon: "🏖️",
+          title: "Playa de Marari – Relax junto al mar",
+          date: "16–18 enero 2026",
+          description: "2 días en la playa de Marari: Relájate en playas de arena blanca prístina, disfruta de actividades de playa y descansa junto al Mar Arábigo.",
+          image: "/marari-beach.jpg"
+        },
+        {
           icon: "🚤",
           title: "Alappuzha (Alleppey) – Remansos",
-          date: "16–18 enero 2026",
-          description: "2 días en Alleppey: Crucero en casa flotante tradicional, observando la vida local junto a los canales y disfrutando de comidas típicas de Kerala a bordo.",
+          date: "18 enero 2026",
+          description: "Crucero de un día en Alleppey: Crucero en casa flotante tradicional, observando la vida local junto a los canales y disfrutando de comidas típicas de Kerala a bordo.",
           image: "/allepey.jpg"
         },
         {
-          icon: "🌴",
-          title: "Cochin – Relax antes de la salida",
-          date: "18 enero 2026",
-          description: "Regreso a la tierra para una última noche cerca de la playa, último día antes de la salida."
+          icon: "🏨",
+          title: "Hotel cerca del aeropuerto – Última noche",
+          date: "18–19 enero 2026",
+          description: "Noche en un hotel cerca del Aeropuerto Internacional de Cochin para mayor comodidad antes de la salida."
         },
         {
           icon: "🛬",
@@ -197,7 +218,7 @@ function App() {
           description: "Fin del viaje post-boda. Vuelo de regreso desde el Aeropuerto Internacional de Cochin (COK)."
         }
       ],
-      keralaTripSummary: "Nos encargaremos de la logística y de la organización el viaje (transporte terrestre, alojamiento, actividades). Cada invitado cubre sus gastos de viaje, ¡pero haremos que todo sea fácil y asequible!"
+      keralaTripSummary: "Nos encargaremos de la logística y de la organización el viaje (transporte terrestre, alojamiento, actividades). Cada invitado cubre todos sus gastos (vuelos, alojamiento, comidas, transporte, etc.), ¡pero haremos que todo sea fácil y asequible!"
     }
   };
 
@@ -306,9 +327,6 @@ function App() {
                 <div className="text-xl font-extrabold text-teal-900 bg-teal-100 rounded-lg py-2 px-4 mb-2 flex items-center justify-center gap-2">
                   <span role="img" aria-label="Total">🧮</span>
                   {keralaLang === 'fr' ? 'Total estimé' : keralaLang === 'es' ? 'Total estimado' : 'Estimated Total'}: <span className="ml-2">500€</span>
-                </div>
-                <div className="text-xs text-teal-500 mt-1">
-                  {keralaLang === 'fr' ? 'Prix maximum par poste, à titre indicatif.' : keralaLang === 'es' ? 'Precio máximo por partida, orientativo.' : 'Maximum price per item, for reference.'}
                 </div>
               </div>
               <div className="mt-10 bg-teal-50 border border-teal-100 rounded-lg p-4 text-teal-700 text-base text-center">
