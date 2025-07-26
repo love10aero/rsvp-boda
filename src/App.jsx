@@ -339,7 +339,7 @@ function App() {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
       <div className="bg-white rounded-xl shadow-lg p-6 max-w-md w-full text-center relative">
         <button onClick={() => setShowFlightModal(false)} className="absolute top-2 right-2 text-gray-400 hover:text-teal-600 text-2xl font-bold">&times;</button>
-        <img src="/flight-details.png" alt="Flight details" className="w-full rounded-lg mb-2" />
+        <img src="/ATQ-COK.png" alt="Flight details" className="w-full rounded-lg mb-2" />
         <div className="text-sm text-teal-700 mt-2">{keralaLang === 'fr' ? 'Détails du vol Amritsar → Kerala' : keralaLang === 'es' ? 'Detalles del vuelo Amritsar → Kerala' : 'Flight details Amritsar → Kerala'}</div>
       </div>
     </div>
