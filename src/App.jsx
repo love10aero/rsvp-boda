@@ -139,7 +139,7 @@ function App() {
           title: "Plage de Marari – Détente au bord de mer",
           date: "16–18 janvier 2026",
           description: "2 jours à la plage de Marari : Détente sur des plages de sable blanc immaculées, activités de plage, et relaxation au bord de la mer d'Arabie.",
-          image: "/marari-beach.jpg"
+          image: "/marari.jpeg"
         },
         {
           icon: "🚤",
@@ -196,7 +196,7 @@ function App() {
           title: "Playa de Marari – Relax junto al mar",
           date: "16–18 enero 2026",
           description: "2 días en la playa de Marari: Relájate en playas de arena blanca prístina, disfruta de actividades de playa y descansa junto al Mar Arábigo.",
-          image: "/marari-beach.jpg"
+          image: "/marari.jpeg"
         },
         {
           icon: "🚤",
